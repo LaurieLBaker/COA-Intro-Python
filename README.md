@@ -29,6 +29,6 @@ The [assignments README file](https://github.com/LaurieLBaker/DCS-109/) contains
 
 # Acknowledgements
 
-The repo structure, and guide to the course management tools (Google colab, Github) used in this course come from: [Jeremy Manning at Dartmouth College's Computer Science for Psych Course](https://github.com/ContextLab/cs-for-psych#readme)
+The repo structure, and guide to the course management tools (Google colab, Github) used in this course come from Jeremy Manning at Dartmouth College's [Computer Science for Psych Course](https://github.com/ContextLab/cs-for-psych#readme)
 
 
