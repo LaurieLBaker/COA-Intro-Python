@@ -9,13 +9,6 @@ output:
     toc: TRUE
 ---
 
-```{r setup, include=FALSE}
-library(tufte)
-# invalidate cache when the tufte version changes
-knitr::opts_chunk$set(cache.extra = packageVersion('tufte'))
-options(htmltools.dir.version = FALSE)
-```
-
 # Creating your Portfolio
 
 - As a final culminating project, you will be building a repository throughout the
@@ -52,16 +45,17 @@ The final portfolio will consist of the following themes:
 ## 1. Zines {.tabset}
 
 
->"A zine is a small-circulation self-published work of original or appropriated texts and images, usually reproduced via a copy machine." > ~ Wikipedia
+>"A zine is a small-circulation self-published work of original or appropriated texts and images, usually reproduced via a copy machine." ~ [Wikipedia](https://en.wikipedia.org/wiki/Zine)
 
 Zines should set out to answer:
 
 1. What do people need to know about a topic? 
-2. What did you found surprising when learning this topic?
-3. What are the most important things?
+2. What are the most important things?
+3. What did you found surprising when learning this topic?
 
 As you write your zine you should think about how you would write a clear explanation to describe it to someone new?
 
+Let's look at a few examples by Julia Evans of [wizardzines.org](https://wizardzines.com/)
 
 ### Example 1
 
@@ -93,9 +87,10 @@ Your documented sample should consist of:
   * **style:** spaces were added before and after operators.
   * **fix count_votes algorithm:** fix count_votes algorithm by ...
 
+
 ## 3. Real world context
 
-* This will include. Your EdStem post about a particular topic.
+* This will include your EdStem post about a particular topic.
 
 # Submitting your Portfolio
 
