@@ -2,7 +2,11 @@
 
 This course explores computational thinking and problem solving via an introduction to computer programming. More specifically, the course explores computing as a discipline of study, discovering accurate solutions to interesting and challenging problems, and representing these solutions in a precise way so that computers can assist with solving the problems. Students learn fundamentals of programming using Python, including basic data structures, flow control structures, functions, recursion, elementary object-oriented programming, file I/O and discussion of higher-level concepts including abstraction, modularity, testing, and debugging. Through detailed laboratory and project work, these concepts are developed using important real-world contexts. 
 
-# Student instructions
+# Assignments
+
+- [Final Portfolio Guide](/assignments/portfolio/portfolio_guide.html)
+
+# Student GitHub instructions
 
 ## Overview
 We will use the following tools in this course:
