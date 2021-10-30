@@ -8,7 +8,6 @@ output:
     highlight: zenburn
     toc: TRUE
     toc_float: TRUE
-    number_sections: TRUE
     toc_depth: 2
 ---
 
@@ -27,7 +26,7 @@ contexts (e.g., rank-choice voting, bias in algorithms).
 
 The goal of the final portfolio is to synthesize concepts covered in the lectures, homeworks, labs, and project and create a showcase of your work.
 
-## Contents
+**Contents**
 
 Each section will include:
 
@@ -47,7 +46,7 @@ The final portfolio will consist of the following themes:
 | Algorithms  (1. Count something, 2. Add numbers, 3. Build a string, 4. Build a list)| zine ; documented example| 
 | Control Flow (if, if else, elif, while)  | zine; documented example (e.g. proj 1); real-world reflection (EdStem: Rank Choice Voting)| 
 
-## Zines {.tabset}
+## 1. Zines {.tabset}
 
 
 >"A zine is a small-circulation self-published work of original or appropriated texts and images, usually reproduced via a copy machine." ~ [Wikipedia](https://en.wikipedia.org/wiki/Zine)
@@ -82,7 +81,7 @@ knitr::include_graphics(path = "images/bash_tricks.png")
 1. [How to make a zine without fancy tools by Julia Evans?](https://jvns.ca/blog/2019/09/01/ways-to-write-zines-without-fancy-tools/)
 <iframe src="https://jvns.ca/blog/2019/09/01/ways-to-write-zines-without-fancy-tools/"  width="1000" height="1200"  title="How to Make a Zine by Julia Evans"></iframe>
 
-## A documented sample
+## 2. A documented code sample
 
 Your documented sample should consist of:
 
@@ -93,7 +92,7 @@ Your documented sample should consist of:
   * **fix count_votes algorithm:** fix count_votes algorithm by ...
 
 
-## Real world context
+## 3. Real world context
 
 * This will include your EdStem post about a particular topic.
 
