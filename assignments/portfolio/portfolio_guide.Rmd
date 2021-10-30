@@ -1,0 +1,110 @@
+---
+title: "DCS 109: Final Portfolio Guide"
+author: "Prof. Baker and Prof. Lawson"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: united
+    highlight: zenburn
+    toc: TRUE
+---
+
+```{r setup, include=FALSE}
+library(tufte)
+# invalidate cache when the tufte version changes
+knitr::opts_chunk$set(cache.extra = packageVersion('tufte'))
+options(htmltools.dir.version = FALSE)
+```
+
+# Creating your Portfolio
+
+- As a final culminating project, you will be building a repository throughout the
+semester to help you learn the course concepts while also reflecting on your
+understanding.
+
+- As part of this repository, you will be asked to include well-documented examples of
+your completed work that address a particular concept, and to provide guided
+reflections on that concept and on your work.
+
+- You will also be asked to include a few reflections on investigations of real-world
+contexts (e.g., rank-choice voting, bias in algorithms).
+
+The goal of the final portfolio is to synthesize concepts covered in the lectures, homeworks, labs, and project and create a showcase of your work.
+
+Each section will include:
+
+1.  **Zines** a zine that explains concepts in a simple way.
+2. **Documented example of work**: well-documented examples of
+your completed work that address a particular concept, and reflections on that concept and on your work including any revisions based on feedback.
+3. **Real world reflection**: that shows how a concept connects to the real-world. 
+
+The final portfolio will consist of the following themes:
+
+| Theme     | Description | 
+| ----------- | ----------- | 
+| Data Types and Strings | zine; documented example (e.g. hw1.py) |
+|Variables, assignment statements & expressions | zine; documented example|
+|Functions (fruitful, non-frutiful)| zine; documented example| 
+|For Loops| zine; documented example| 
+| Algorithms  (1. Count something, 2. Add numbers, 3. Build a string, 4. Build a list)| zine ; documented example| 
+| Control Flow (if, if else, elif, while)  | zine; documented example (e.g. proj 1); real-world reflection (EdStem: Rank Choice Voting)| 
+
+## 1. Zines {.tabset}
+
+
+>"A zine is a small-circulation self-published work of original or appropriated texts and images, usually reproduced via a copy machine." > ~ Wikipedia
+
+Zines should set out to answer:
+
+1. What do people need to know about a topic? 
+2. What did you found surprising when learning this topic?
+3. What are the most important things?
+
+As you write your zine you should think about how you would write a clear explanation to describe it to someone new?
+
+
+### Example 1
+
+```{r zine-example, fig.width = 10, fig.height = 2, fig.fullwidth = TRUE, fig.cap = "Asking Good Questions Zine Example by [Julia Evans](https://jvns.ca/blog/good-questions/).", warning=FALSE, message=FALSE, cache=TRUE, echo=FALSE}
+knitr::include_graphics(path = "images/asking_questions_zine_julia_evans.svg")
+```
+
+
+### Example 2
+
+
+```{r bash-tricks-zine, fig.width = 10, fig.height = 2, fig.fullwidth = TRUE, fig.cap = "BASH tricks zine example by [Julia Evans](https://jvns.ca/blog/good-questions/).", warning=FALSE, message=FALSE, cache=TRUE, echo=FALSE}
+knitr::include_graphics(path = "images/bash_tricks.png")
+```
+
+
+### How to create a zine
+
+1. [How to make a zine without fancy tools by Julia Evans?](https://jvns.ca/blog/2019/09/01/ways-to-write-zines-without-fancy-tools/)
+<iframe src="https://jvns.ca/blog/2019/09/01/ways-to-write-zines-without-fancy-tools/"  width="1000" height="1200"  title="How to Make a Zine by Julia Evans"></iframe>
+
+## 2. A documented sample
+
+Your documented sample should consist of:
+
+1. A homework, lab, or project
+2. A short introduction (3-4 sentences) pointing out how it illustrates the concept, with the particular sections of code where the concept is used referenced. 
+3. A short bulleted reflection pointing out any changes made from feedback (e.g. fixing points deducted) e.g.
+  * **style:** spaces were added before and after operators.
+  * **fix count_votes algorithm:** fix count_votes algorithm by ...
+
+## 3. Real world context
+
+* This will include. Your EdStem post about a particular topic.
+
+# Submitting your Portfolio
+
+* In google drive, we will create a portfolio folder with sub folders for each theme. Each folder should contain:
+
+1. A zine: If you prefer to draw your zine, you can scan it and include it as a png or pdf.
+2. Your polished hw, lab, or project
+3. A document describing how your hw, lab, or project demonstrates a concept and a short summary of any updates you made to your hw, lab, or project based on feedback.
+4. Real-world context (N.B. Only for particular sections)
+
+
+
