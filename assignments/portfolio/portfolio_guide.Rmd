@@ -8,7 +8,8 @@ output:
     highlight: zenburn
     toc: TRUE
     toc_float: TRUE
-    toc_depth: 2
+    toc_depth: 3
+fontsize: 12pt
 ---
 
 # Creating your Portfolio
@@ -26,11 +27,11 @@ contexts (e.g., rank-choice voting, bias in algorithms).
 
 The goal of the final portfolio is to synthesize concepts covered in the lectures, homeworks, labs, and project and create a showcase of your work.
 
-**Contents**
+## Contents
 
 Each section will include:
 
-1.  **Zines** a zine that explains concepts in a simple way.
+1.  **A Zine** that explains concepts in a simple way.
 2. **Documented example of work**: well-documented examples of
 your completed work that address a particular concept, and reflections on that concept and on your work including any revisions based on feedback.
 3. **Real world reflection**: that shows how a concept connects to the real-world. 
@@ -43,10 +44,12 @@ The final portfolio will consist of the following themes:
 |Variables, assignment statements & expressions | zine; documented example|
 |Functions (fruitful, non-frutiful)| zine; documented example| 
 |For Loops| zine; documented example| 
-| Algorithms  (1. Count something, 2. Add numbers, 3. Build a string, 4. Build a list)| zine ; documented example| 
+| Algorithms* | zine ; documented example| 
 | Control Flow (if, if else, elif, while)  | zine; documented example (e.g. proj 1); real-world reflection (EdStem: Rank Choice Voting)| 
 
-## 1. Zines {.tabset}
+*Including: 1. Count something, 2. Add numbers, 3. Build a string, 4. Build a list
+
+### 1. Zines {.tabset}
 
 
 >"A zine is a small-circulation self-published work of original or appropriated texts and images, usually reproduced via a copy machine." ~ [Wikipedia](https://en.wikipedia.org/wiki/Zine)
@@ -61,14 +64,14 @@ As you write your zine you should think about how you would write a clear explan
 
 Let's look at a few examples by Julia Evans of [wizardzines.org](https://wizardzines.com/)
 
-### Example 1
+#### Example 1
 
 ```{r zine-example, fig.width = 10, fig.height = 2, fig.fullwidth = TRUE, fig.cap = "Asking Good Questions Zine Example by [Julia Evans](https://jvns.ca/blog/good-questions/).", warning=FALSE, message=FALSE, cache=TRUE, echo=FALSE}
 knitr::include_graphics(path = "images/asking_questions_zine_julia_evans.svg")
 ```
 
 
-### Example 2
+#### Example 2
 
 
 ```{r bash-tricks-zine, fig.width = 10, fig.height = 2, fig.fullwidth = TRUE, fig.cap = "BASH tricks zine example by [Julia Evans](https://jvns.ca/blog/good-questions/).", warning=FALSE, message=FALSE, cache=TRUE, echo=FALSE}
@@ -76,12 +79,12 @@ knitr::include_graphics(path = "images/bash_tricks.png")
 ```
 
 
-### How to create a zine
+#### How to create a zine
 
 1. [How to make a zine without fancy tools by Julia Evans?](https://jvns.ca/blog/2019/09/01/ways-to-write-zines-without-fancy-tools/)
 <iframe src="https://jvns.ca/blog/2019/09/01/ways-to-write-zines-without-fancy-tools/"  width="1000" height="1200"  title="How to Make a Zine by Julia Evans"></iframe>
 
-## 2. A documented code sample
+### 2. A documented code sample
 
 Your documented sample should consist of:
 
@@ -92,7 +95,7 @@ Your documented sample should consist of:
   * **fix count_votes algorithm:** fix count_votes algorithm by ...
 
 
-## 3. Real world context
+### 3. Real world context
 
 * This will include your EdStem post about a particular topic.
 
