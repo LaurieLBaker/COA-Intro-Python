@@ -46,8 +46,10 @@ The final portfolio will consist of the following themes:
 |For Loops| zine; documented example| 
 | Algorithms* | zine ; documented example| 
 | Control Flow (if, if else, elif, while)  | zine; documented example (e.g. proj 1); real-world reflection (EdStem: Rank Choice Voting)| 
+| Reading and writing files| zine; documented example| 
+| Classes and objects| zine; documented example| 
 
-*Including: 1. Count something, 2. Add numbers, 3. Build a string, 4. Build a list
+*Including: 1. Count something, 2. Add numbers, 3. Build a string/list, 4. Find an item in a list, 5. Find the minimum value in a list
 
 ### 1. Zines {.tabset}
 
