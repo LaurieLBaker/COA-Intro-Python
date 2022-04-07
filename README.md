@@ -5,6 +5,7 @@ This course explores computational thinking and problem solving via an introduct
 # Assignments
 
 - [Final Portfolio Guide](/assignments/portfolio/portfolio_guide.html)
+- [Final Project Guide](/assignments/final_project_portfolio/project_portfolio_guide.html)
 
 # Student GitHub instructions
 
