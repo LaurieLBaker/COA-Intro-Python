@@ -1,0 +1,94 @@
+---
+title: "DCS 109: Final Project Guide"
+author: "Prof. Baker"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: paper
+    highlight: zenburn
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 3
+fontsize: 12pt
+---
+
+# Creating your Final Project and Portfolio Reflection
+
+The goal of the final project is to synthesize concepts covered in the lectures, homeworks, and labs. It will consist of:
+
+| Components     |  Description |
+| ---- | ----------- |
+| A presentation | A short video presentation (2 minutes long) introducing the script you wrote and what it does. | 
+| The code | A well documented script using the concepts we have learned in class so far. |
+| Summary | A summary of how the concepts are used. |
+
+Your Final Project is due on **Tuesday, April 19**. We will use the last day of class to work on the project. Those wishing to do the "Choose your own adventure project" must submit ideas by **Sunday, April 10.**
+
+## Project Components {.tabset}
+
+
+### Presentation
+
+Your presentation should be no more than 3 minutes and should introduce:
+
+1. **Background**: When/why would you use the script?
+2. **Purpose**: What does it do?
+3. **Mechanics**: How does it work?
+
+Presentations may be recorded as a video file and posted on lyceum. A zoom of a slideshow is fine.
+
+Note that your presentation will be about how Rank Choice Voting works if you choose to do this option. 
+
+### The Code
+
+Option 1: Rank Choice Voting Implementation
+
+The Rank Choice Voting Implementation will be circulated on Friday. 
+
+Option 2: Choose your own adventure
+
+Project ideas must be submitted by **Sunday, April 10** to do this option.
+
+**Concepts covered**
+
+You code must implement each of the concepts used in class in the table below and **at least two** of the algorithms we have covered in class. 
+
+| Concepts     | 
+| ----------- |
+| Data Types and Strings |  
+|Variables, assignment statements & expressions |
+|Functions (at least three total: fruitful, non-fruitful)|  
+|For Loops| 
+| Algorithms* |  
+| Control Flow (one of: if, if else, elif, while)  |  
+
+
+*Including: 1. Count something, 2. Add numbers, 3. Build a string/list, 4. Find an item in a list, 5. Find the minimum value in a list
+
+Your script will be evaluated on the concepts we have used so far in class including good practices in writing code:
+
+**Program Inspection**
+
+Does the program use good practices in writing code?
+
+* Good names for variables and parameters
+* Uses appropriate type hinting for function parameters and return types
+* Appropriate function comments, including brief function description,
+        and descriptions for arguments and return types
+* Good inline commenting throughout
+* Appropriate use of white-space (spaces around operators, blank lines)
+* At least two tests per function
+
+### Summary of how concepts are used
+
+1. A paragraph (~250 words) that explains how the concepts are used within your code, with the particular sections of code where the concept is used referenced. 
+
+## Deadline and submitting your Final Project
+
+Your Final Project is due on Tuesday, April 19
+
+* The submission will be in three parts:
+   - You will post your presentation video on the lyceum forum
+   - You will submit your final project code as a `.py` file in the file submission (similar to previous labs) and post your summary of how the concepts are used in the online text box provided.
+
+
