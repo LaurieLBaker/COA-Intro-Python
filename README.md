@@ -4,7 +4,7 @@ This course explores computational thinking and problem solving via an introduct
 
 # Assignments
 
-- [Lab 1](/assignments/lab1/lab1.pdf)
+- [Lab 1](/assignments/lab_1/lab1.pdf)
 - [Final Portfolio Guide](/assignments/portfolio/portfolio_guide.html)
 - [Final Project Guide](/assignments/final_project_portfolio/project_portfolio_guide.html)
 
