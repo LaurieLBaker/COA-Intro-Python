@@ -1,0 +1,158 @@
+\documentclass[10pt]{article}
+\usepackage{fullpage}
+\usepackage{charter}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{ulem}
+\usepackage{xspace}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+%\pagestyle{empty}
+
+\parskip  10pt
+\parindent 0pt
+\textwidth 7.25in
+\oddsidemargin -0.35in
+\textheight 9.5in
+\topmargin -0.35in
+
+\begin{document}
+
+  \thispagestyle{empty}
+  \def\cpp{C{\tt ++}\xspace}
+
+  \begin{bf}
+      Lab 1
+      \hfill 
+      Chatbots: Variables, Assignments, Conditional Statements and your First Python Program!
+      \hfill
+  \end{bf}
+
+  \vspace*{10pt} \hrule \vspace*{1pt} \hrule
+
+  \vspace*{-10pt}
+  
+  \paragraph{Learning Outcomes:} By the end of this lab, you will:
+  \vspace*{-15pt}
+\begin{itemize}
+\setlength\itemsep{-0.5em}
+    \item Successfully write a program in Python using the Google Colab
+        editor/interpreter.
+    \item Implement professional practices in coding such as 
+        thorough commenting and good variable naming.
+    \item Receive user inputs and assign them to variables for later use.
+    \item Use formatted outputs to ask for inputs and display the results of
+        program calculations.
+    \item Use conditional statements to return different messages to users based on their inputs.
+\end{itemize}
+  \vspace*{-15pt}
+  \paragraph{Assignment:}
+  In this homework, you will write your first meaningful Python program that
+  asks the user for input and then displays some messages based on that input.
+  Write your programs in Google Colab. Make sure that your program is
+  appropriately commented.
+
+  \begin{enumerate}
+    \item Begin by opening a new Colab notebook named {\tt hw1}.
+    \item Ask the user for their name (use the {\tt input} function) and store
+    the result into a variable called {\tt name}.
+    Then print three different messages that say hello to the user in three
+    different languages (your choice).
+    \item Save and run your program.  For example, if the COA Mascot (whose
+    name, we assume, is Black Fly) were to run their program, the result might
+    look like the following:
+\begin{verbatim}
+    What is your name? Black Fly
+    Hello, Black Fly!
+    ¡Hola, Black Fly!
+    Dia Duit Black Fly!
+\end{verbatim}
+(Dia Duit is ``Hello" in the Irish language)
+    \item Now modify your program to ask the user for their (integer) age in
+    years, and store the result into a variable called {\tt age}. 
+    Then print a message indicating the minimum number of days the user has
+    been alive.
+%CDE:Do we want to add some things about commenting professional practices and later, variable naming professional practices.  I added an example in the second lab, and then we could at the end reference use of all professional practices is expected...
+    \vspace*{10pt} Hint: The {\tt input()} function returns a string (a
+        sequence of characters), so:
+        \begin{itemize}
+            \item to compute the number of days, you will first need to convert that string to an integer using the {\tt int()} function;
+            \item then to pass that integer number of days to the {\tt print()}
+                function, you'll need to convert the number of days to a string
+                using the {\tt str() function}.
+        \end{itemize}
+        So, code to print a message to the user might look like:
+\begin{verbatim}
+    age = input("What is your age in years? ")
+    print("You are at least " + str(int(age) * 365) + " days old!")
+\end{verbatim}
+
+
+    \item Next, modify your program to write the user a message about whether they are eligible to fun for the highest office (e.g. the presidency) in a country (You choose the country!) based on their age. 
+
+%CDE: Is there a missing opportunity here to discuss input validation?  Or even - what does the user need to know in order to respond correctly to your program? A mini-reflection of sorts?
+    \item Save and run your program.  
+        For example, if I were to run my program, the result might look like
+        the following:
+\begin{verbatim}
+    What is your name? Black Fly
+    Hello, Black Fly!
+    ¡Hola, Black Fly!
+    Dia Duit Black Fly!
+    What is your age in years? 21
+    You are at least 7665 days old!
+    Unfortunately, you are not eligible to run for president in the United States until age 35.
+\end{verbatim}
+
+    \item Now modify your program to ask the user the average number of hours
+    they sleep each night, and store the result into a variable called {\tt
+    timeSleep}. 
+    Then print a message indicating the number of hours that a student is
+    expected to sleep each week (assuming they sleep the same amount of time 7 nights a week).
+
+    \item Save and run your program.
+        For example, if I were to run my program, the result might look like
+        the following:
+\begin{verbatim}
+    What is your name? Black Fly
+    Hello, Black Fly!
+    ¡Hola, Black Fly!
+    Dia Duit Black Fly!
+    What is your age in years? 21
+    You are at least 7665 days old!
+    Unfortunately, you are not eligible to run for president in the United States until age 35.
+    How many hours do you sleep on average each night? 8
+    You sleep 56.0 hours each week!
+\end{verbatim}
+
+    \item Now ask the user to enter their favorite quote, and, separately,
+the author of that quote, and then print a message indicating the number of
+characters (including spaces and punctuation) in that quote.  Hint: the {\tt
+len()} function will return the number of characters present in a given string.
+
+For example:
+\begin{verbatim}
+    What is your favorite quote? The master's tools will never dismantle the master's house. 
+    They may allow us temporarily to beat him at his own game, but they will never enable us 
+    to bring about genuine change.
+    To whom is this quote attributed? Audre Lorde
+    The number of characters in this quote by Audre Lorde is 179.
+\end{verbatim}
+
+\item Congratulations, you've finished your first chatbot that interacts with a user. What are some of the things that we rely on the user to get right when interacting with our chatbot? What do we have control over in the program? What is outside of our control?
+
+  \end{enumerate}
+
+
+
+
+  \paragraph{Submitting:}   When finished, download your program as {\tt lab1.py} (i.e., as a stand-alone Python program, not as a Python notebook having extension {\tt.pynb}). Then upload in Google Classroom.
+
+\end{document}
+
+
