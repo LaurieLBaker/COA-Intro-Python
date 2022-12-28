@@ -1,0 +1,219 @@
+\documentclass[10pt]{article}
+\usepackage{fullpage}
+\usepackage{charter}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{ulem}
+\usepackage{xspace}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+%\pagestyle{empty}
+
+\parskip  10pt
+\parindent 0pt
+\textwidth 7.25in
+\oddsidemargin -0.35in
+\textheight 9.5in
+\topmargin -0.35in
+
+\usepackage{fancyvrb}
+\usepackage{xcolor}
+
+\newcommand{\mgn}{\color{magenta}}
+\newcommand{\blk}{\color{black}}
+\newcommand{\blu}{\color{blue}}
+\newcommand{\cyn}{\color{cyan}}
+\newcommand{\red}{\color{red}}
+\definecolor{darkgreen}{RGB}{34,139,34}
+\newcommand{\grn}{\color{darkgreen}}
+\newcommand{\gra}{\color{darkgray}}
+\definecolor{orange}{HTML}{CC5500}
+\newcommand{\orn}{\color{orange}}
+
+% save for future use
+%\begin{Verbatim}[commandchars=\\\{\}]
+%\end{Verbatim}
+
+\begin{document}
+
+  \thispagestyle{empty}
+  \def\cpp{C{\tt ++}\xspace}
+
+  \begin{bf}
+      Lab \#2
+      \hfill 
+      Contagion: Predicting New Infections
+      \hfill
+  \end{bf}
+
+  \vspace*{10pt} \hrule \vspace*{1pt} \hrule
+
+  \vspace*{-10pt}
+  
+  \paragraph{Learning Outcomes:} By the end of this lab, you will:
+  \vspace*{-15pt}
+\begin{itemize}
+\setlength\itemsep{-0.5em}
+    \item Successfully write two types of functions in Python:
+    \begin{enumerate}
+    \item    Non-fruitful with parameters
+    \item    Fruitful with parameters.
+    \end{enumerate}
+    \item Implement professional practices in coding such as 
+        good function names, variable naming, type hints, and comments, and program layout.
+    \item Build on previous work: 
+        \begin{itemize}
+            \item Perform and then display the results of calculations using
+                contents of variables.
+            \item Work with different Python data types, variables, expressions,
+                and built-in function calls.
+        \end{itemize}
+\end{itemize}
+  \vspace*{-15pt}
+  \paragraph{Assignment:}
+
+  Write your program in Google Colab.
+  Make sure to use good variable names, and include comments to describe
+  what you are doing.
+
+  You will write two different versions of a function that will compute and
+  either print or return the predicted number of new infected animals.
+  Your code will then use the function(s) to explore how levels of vaccination affect the number of new infected cases, and how this varies depending on the infection rate. 
+
+  Begin by opening a new Colab notebook named {\tt lab2} and then:
+  \begin{enumerate}
+    %%%%%
+    \item Write a \uline{non-fruitful} function named {\tt reportNewInfecteds} having
+      \uline{four parameters} named {\tt infectionRate}, {\tt susceptible}, {\tt vaccinated} and {\tt infected}.
+      Your function must:
+      \begin{itemize}
+        \item Keep track of the number of new infected animals using the following formula: 
+      \begin{Verbatim}[commandchars=\\\{\}]
+         newInfecteds = round((susceptible-vaccinated)*infected*infectionRate)
+      \end{Verbatim}
+        \item Keep track of the number of new susceptible animals using the following formula: 
+      \begin{Verbatim}[commandchars=\\\{\}]
+         newSusceptible = round((susceptible-vaccinated-newInfecteds)
+      \end{Verbatim}
+        
+        \item Assuming the animals do not lose their immunity, keep track of the number of vaccinated animals using the following formula: newVaccinated = vaccinated.
+
+      \begin{Verbatim}[commandchars=\\\{\}]
+         newVaccinated = vaccinated
+      \end{Verbatim}
+        
+        \item Print the number of newInfecteds, newSusceptible, and newVaccinated including text describing what was run and what is being printed.
+        \item Your function should \uline{not}:
+            \begin{itemize}
+                \item Use the {\tt input} function.
+                \item Overwrite or modify the values given in the four parameters.
+            \end{itemize}
+        \item At the bottom of your program (below all function definitions),
+        include \uline{multiple (e.g. 2-3)} calls to your function to test your function
+        passing in different values for the arguments to your function.
+      \end{itemize}
+    %%%%%
+    \item Modify your function from above to make it a \uline{fruitful} function named {\tt returnNewInfecteds}
+    \item To return multiple variables you can do this by separating them with a comma, e.g. 
+       \begin{Verbatim}[commandchars=\\\{\}]
+         return variableOne, variableTwo, variableThree
+      \end{Verbatim}   
+    
+        \item Your function should \uline{not}:
+            \begin{itemize}
+                \item Use the {\tt input} function.
+                \item Overwrite or modify the values given in the three parameters.
+            \end{itemize}
+
+        \item {\bf What happens to the number of new infected individuals over multiple time steps?} \newline At the bottom of your program store and print \uline{three}
+            different calls to  {\tt returnNewInfecteds} using:
+            \begin{itemize}
+            \item an infection rate of 0.001, 
+            \item a susceptible population of 5000, 
+            \item a starting number of infecteds of 10,
+            \item a vaccinated population of 1500.
+            \end{itemize}
+            
+        An example of one such call is shown below.
+\begin{Verbatim}[commandchars=\\\{\}]
+        \grn# call fruitful functions -- store then print the value\blk
+        timeOne = returnNewInfecteds(infectionRate = 0.001, \newline
+        \hspace{30pt} susceptible = 6000, vaccinated = 1000, infected = 10)  
+        print("The number of new infected animals is " + str(timeOne[0]) + ".")
+\end{Verbatim}
+            How many animals need to be vaccinated before the number of cases predicted for next week decreases? Don't worry about getting the exact number, but include at least one call to the function where the number of predicted cases for next week decreases.
+            
+         \item {\bf How does the number of animals vaccinated required change as the disease becomes more infectious?}: \newline 
+         At the bottom of your program, store an additional \uline{three}
+            different calls to {\tt returnNewInfecteds} this time using:
+            \begin{itemize}
+            \item an infection rate of {\bf 0.002},
+            \item a susceptible population of 5000, 
+            \item a infected population of 10
+            \item different numbers of vaccinated animals. 
+            \end{itemize}
+            Don't worry about getting the exact number, but roughly how many additional animals need to be vaccinated before the number of cases predicted for the next week decreased? 
+        \item At the bottom of your program (below all function definitions),
+            include a call to your function, using an assignment statement
+            to store the result of calling your function.
+            Make sure to test before moving on. Below is an example of a such a call to a fruitful function:
+\begin{Verbatim}[commandchars=\\\{\}]
+        \grn# call fruitful function -- either store or use print\blk
+        newInfections = returnNewInfecteds()
+        print("The number of new infected animals is " + str(newInfections))
+\end{Verbatim}
+
+  \end{enumerate}
+
+  \paragraph{Reflection:} 
+  At the end of your lab, provide a paragraph response comparing the benefit of fruitful vs.\ non-fruitful?
+
+  In a second paragraph, discuss your findings on vaccination. How many animals needed to be vaccinated before the number of predicted infected animals decreased? Roughly how many more vaccinated animals were required as the disease became more infectious (a higher infectionRate)?
+  
+  Finally, discuss the limitations of the current epidemiological model. What assumptions does it make about equal mixing that are likely not to be true in the wild? How do current measures for Covid-19, such as masking and isolation change the number of susceptible and infecteds respectively? Check out the article by \href{https://fivethirtyeight.com/features/why-its-so-freaking-hard-to-make-a-good-covid-19-model/}{fivethirtyeight} for ideas.
+
+  \vspace*{-15pt}
+  \paragraph{Submitting:} 
+    When finished, download your program as {\tt lab2.py}.
+    (Do not download as a Python notebook having extension {\tt .ipynb}.)
+    Upload your {\tt lab2.py} file to Google Classroom.
+    Also remember your reflection.
+
+\paragraph{Grading Rubric:}  Below is what I will be looking for in this assignment:
+    \begin{itemize}
+        \setlength{\itemsep}{0pt}
+        \item Did you thoughtfully explore and reflect on the epidemiological questions in the reflection?
+        \item Did you give your functions clear names?
+        \item Do the non-fruitful functions contain no return statement?
+            Do the fruitful functions return the variables to be used in the next time step?
+
+        \item Are all of your functions defined at the top of your program, and
+           all calls to the functions occur together at the bottom (below your
+           function definitions)?
+        \item Did you use good variables names that describe what is being
+            stored in the variable, particularly avoiding single-letter or
+            unnecessarily abbreviated names?
+        \item Did you avoid using existing Python function names as your
+            variable names (e.g., no use of {\tt sum}, {\tt int})?
+        \item Do your variables begin with a lowercase letter, and then
+            consistently use either snake case or camel case for any
+            subsequent words in the variable names?
+        \end{itemize}
+
+\paragraph{Next Week:}  We will revisit the assignment next week to add the following:
+
+        \begin{itemize}
+        \item Docstring comments for each function.
+        \item Type hints for each parameter and each function's
+            return type.
+        \item Thorough testing to ensure the program works correctly.
+    \end{itemize}
+
+\end{document}
+
+
