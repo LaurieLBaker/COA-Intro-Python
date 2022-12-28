@@ -1,0 +1,351 @@
+\documentclass[10pt]{article}
+\usepackage{fullpage}
+\usepackage{charter}
+\usepackage{graphicx}
+\usepackage{ulem}
+\usepackage{xspace}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+%\pagestyle{empty}
+
+\usepackage{fancyvrb}
+\usepackage{xcolor}
+
+\newcommand{\mgn}{\color{magenta}}
+\newcommand{\blk}{\color{black}}
+\newcommand{\blu}{\color{blue}}
+\newcommand{\cyn}{\color{cyan}}
+\newcommand{\red}{\color{red}}
+\definecolor{darkgreen}{RGB}{34,139,34}
+\newcommand{\grn}{\color{darkgreen}}
+\newcommand{\gra}{\color{darkgray}}
+\definecolor{orange}{HTML}{CC5500}
+\newcommand{\orn}{\color{orange}}
+
+\parskip  10pt
+\parindent 0pt
+\textwidth 7.25in
+\oddsidemargin -0.35in
+\textheight 9.1in
+\topmargin -0.25in
+
+\begin{document}
+
+  \thispagestyle{empty}
+  \def\cpp{C{\tt ++}\xspace}
+
+  \begin{bf}
+      Lab \#3
+      \hfill 
+      Making Music With Strings
+      \hfill
+  \end{bf}
+
+  \vspace*{10pt} \hrule \vspace*{1pt} \hrule
+
+  \vspace*{-10pt}
+  \paragraph{Overview:} 
+
+  \newcommand{\prog}{{\tt lab3\_music\_with\_strings.py}\xspace}
+
+  In this lab, you will write various functions to manipulate strings using
+  for-loops.  
+  To spice up the action, for this lab each string will represent the musical
+  notes of a short song, and your functions will perform various musical
+  transformations to a given song.  
+
+  \vspace*{-20pt}
+  
+  \vspace*{-15pt}
+  \paragraph{Getting Started:}
+    For this lab, we will use the accompanying Python code in
+    the file {\tt MakeSong.py} posted on Google Classroom.
+    This accompanying code will allow you to easily create a WAV audio file
+    (see \url{https://en.wikipedia.org/wiki/WAV}) that you can play, which will
+    correspond to the musical notes in a given string representing a song/tune.
+
+    To facilitate getting started, I have also provided a starter 
+    \prog
+    program in which the remainder of your
+    programming work will go.
+    You will note that the program follows the recommendations of using a {\tt main}
+    function and nothing declared in the global scope.
+
+    \vspace*{-6pt}
+    \begin{itemize}
+        \item From Google Classroom, download and save both {\tt MakeSong.py} and the
+            starter \prog into a folder called {\tt lab3}.
+        \item Upload MakeSong.py and the starter \prog to Google Colab. Running the starter file
+            should create a new song file named {\tt cello.wav} in Google Colab.
+    \end{itemize}
+
+    Inside the given \prog, I have provided four song strings as
+    starters, for {\it Mary Had A Little Lamb}, {\it Twinkle Twinkle Little
+    Star}, {\it Smoke On The Water} (Deep Purple), and {\it Suite No.\ 1 for
+    Cello} (J.S.\ Bach).
+    We want you to have fun with this assignment.
+    Feel free to create your own song strings!
+
+    {\bf IMPORTANT}: 
+    All of your coding work below will go inside the \prog source code
+    file.
+    Remember that function definitions should go at the top of your
+    program, below the import statement(s) but above {\tt main}.
+    Only the single call to {\tt main()} should be in the global scope.
+    Make sure to follow good style throughout your work --- good variable and
+    parameters names, good use of vertical and horizontal space, good
+    commenting including docstrings, and type hinting.
+
+  \vspace*{10pt} \hrule \vspace*{1pt} \hrule
+
+  \newpage
+
+  \paragraph{Part I: Raise and Lower Octaves}
+        % reverseSong
+        % raise_octave
+        % lower_octave
+        % raise_octave\_part
+        % lower_octave\_part
+        % spliceSong
+        % random_song
+  \vspace*{-10pt}
+  \begin{enumerate}
+    %%%%%
+    \item Write a \uline{fruitful} function named {\tt reverseSong} having a
+        single parameter named {\tt song}.
+        Use the algorithm from class to build a new song string from scratch
+        --- use a for-loop to iterate through the given song string parameter
+        in reverse, appending note-by-note to your new string.
+        Return your new string at the end.
+        (For this assignment, you are \uline{not} permitted to use Python
+        ``string slicing''.)
+
+        \vspace*{6pt}
+        Back in {\tt main}, include \uline{at least three} appropriate simple
+        (not necessarily musically interesting) tests of your fruitful
+        function, clearly outputting the actual result and the expected result.
+        Make sure to use the {\tt printTest} function.
+        Below is one good example for how to structure such a test:
+\begin{verbatim}
+    song     = "abcde"
+    result   = reverse_song(song)
+    expected = "edcba"
+    printTest(f"reverse_song({repr(song)})", result, expected)
+\end{verbatim}
+        Note that the test clearly indicates in printed output (a) what is
+        being tested, (b) what the actual result is, and (c) what the 
+        expected result is.
+
+        \vspace*{6pt}
+        Beyond these tests, experiment with reversing more interesting songs
+        (whether the ones I provided, or your own creations) and then creating
+        a WAV file of the reversed songs using {\tt MakeSong} as demonstrated
+        in the provided \prog.
+        Let me know what interesting tunes you come up with!
+    %%%%%
+    \item Write a \uline{fruitful} function named {\tt raiseOctave} having a
+        single parameter.
+        Given a song string consisting of (lowercase) notes in the lower octave,
+        this function must return a new string in which the notes have been
+        raised (uppercased) to the upper octave.
+
+        \vspace*{6pt}
+        Use the algorithm from class to build a new song string from scratch:
+        iterate through the given song note-by-note, and append to your new
+        string an uppercased version of each note, returning the upper-octave
+        string at the end.
+        Note that, inside your for-loop, an expression like that shown below
+        will do the right thing to uppercase the ith note in a song:
+\begin{Verbatim}[commandchars=\\\{\}]
+    song[i].upper()  \red# convert the note at index i to uppercase\blk
+\end{Verbatim}
+        {\bf IMPORTANT:} What is shown above is an expression only.
+        Remember to append the result of that expression to your new string.
+        Also, for this task, you must use {\tt upper()} on each character,
+        \uline{not} on the entire provided song string.
+
+        \vspace*{6pt}
+        Back in {\tt main}, include \uline{at least three} appropriate simple
+        (not necessarily musically interesting) tests of your fruitful
+        function, clearly outputting the actual result and the expected result.  
+        Also then play around with more interesting musical songs, and
+        listen to the results.
+
+    %%%%%
+    \item Write a \uline{fruitful} function named {\tt lowerOctave} having a
+        single parameter.
+        Given a song string consisting of (uppercase) notes in the upper octave,
+        this function must return a new string in which the notes have been
+        lowered (lowercased) to the lower octave character-by-character,
+        similar to {\tt raiseOctave} above.
+
+        \vspace*{6pt}
+        Back in {\tt main}, include \uline{at least three} appropriate simple
+        (not necessarily musically interesting) tests of your fruitful
+        function, clearly outputting the actual result and the expected result.  
+        Also then play around with more interesting musical songs, and
+        listen to the results.
+        
+        
+\end{enumerate}
+
+\newpage
+
+\paragraph{Part II: Random Songs}
+
+\begin{enumerate}
+
+    %%%%%
+    \item Write a \uline{fruitful} function named {\tt raiseOctavePart} having 
+        three parameters named {\tt song}, {\tt start}, and {\tt stop}.
+        Given a song string consisting of (at least some) lowercase notes in
+        the lower octave, this function must return a newly-built string in
+        which only the notes between indices {\tt start} and {\tt stop}
+        \uline{both inclusive} have been raised to the upper octave (see {\tt
+        raiseOctave} above).
+        For example, a call inside {\tt main} to this function as follows:
+\begin{Verbatim}[commandchars=\\\{\}]
+    song   = "ABcdeFG"
+    \red#         0123456 -- string indices\blk
+    raised = raiseOctavePart(song, 2, 4)
+\end{Verbatim}
+        should result in the string \verb+"ABCDEFG"+ being stored in the 
+        {\tt raised} variable.
+
+        \vspace*{6pt}
+        For this task, you must use the algorithm from class to build a new
+        string from scratch, iterating note-by-note (string slicing is not
+        permitted).
+        You will need multiple separate (not nested) for-loops to solve 
+        this problem --- how many?
+        As always, work on a solution on paper before attempting to write
+        any code.
+
+        \vspace*{6pt}
+        Back in {\tt main}, include \uline{at least three appropriate} simple
+        (not necessarily musically interesting) tests of your fruitful
+        function, clearly outputting the actual result and the expected result.  
+        Also then play around with more interesting musical songs, and
+        listen to the results.
+
+    %%%%%
+    \item Write a \uline{fruitful} function named {\tt lowerOctavePart} having 
+        three parameters named {\tt song}, {\tt start}, and {\tt stop}.
+        Given a song string consisting of (at least some) uppercase notes in
+        the upper octave, this function must return a newly-built string in
+        which only the notes between indices {\tt start} and {\tt stop}
+        \uline{both inclusive} have been lowered to the lower octave (see {\tt
+        lowerOctave} above).
+
+        \vspace*{6pt}
+        Back in {\tt main}, include \uline{at least three} appropriate simple
+        (not necessarily musically interesting) tests of your fruitful
+        function, clearly outputting the actual result and the expected result.  
+        Also then play around with more interesting musical songs, and
+        listen to the results.
+
+    %%%%%
+    \item Write a \uline{fruitful} function named {\tt randomSong} having 
+        three parameters named {\tt notes}, {\tt min\_notes}, and {\tt max\_notes}.
+        This function must build from scratch and then return a new string
+        consisting of notes chosen at random from the given {\tt notes} string.
+        The length of the newly-built string must also be chosen at random
+        between {\tt min\_notes} and {\tt max\_notes}, both inclusive.
+
+        Recall that the following \uline{expressions} (you must use the
+        expressions meaningfully inside your code, not as stand-alone ``ghost''
+        expressions!) will respectively (a) choose an integer at random between
+        {\tt min\_notes} and {\tt max\_notes} inclusive, and (b) choose an
+        index at random between 0 and the last index in {\tt notes} inclusive:
+\begin{Verbatim}[commandchars=\\\{\}]
+    random.randint(min_notes, max_notes)   \red# this is only an expression!\blk
+
+    random.randint(0, len(notes) - 1)      \red# this is only an expression!\blk
+\end{Verbatim}
+        Remember to {\tt import random} at the top of your program, as shown
+        in class.
+
+        \vspace*{6pt}
+        Because the songs are produced at random, you can't know what the
+        expected result will be$\ldots$ or can you? 
+        If you go into the Python interpreter at the terminal (or equivalently
+        use Colab), you can use an initial seed to the random number generator
+        to determine what the result of your program should be for a given
+        set of {\tt notes}, {\tt min\_notes}, and {\tt max\_notes} parameters,
+        as demonstrated below.
+\newpage
+\begin{Verbatim}[commandchars=\\\{\}]
+    >>> import random
+    >>> notes = "abcdefg"  \red# don't include sharps -- see below\blk
+    >>> random.seed(5551212)
+    >>> num_notes = random.randint(5, 10)
+    >>> print(num_notes)
+    5
+    >>> for i in range(num_notes):
+    ...   index = random.randint(0, len(notes) - 1)
+    ...   print(notes[index])
+    ...
+    c
+    f
+    e
+    e
+    e
+\end{Verbatim}
+        so that you will know the expected result of a call to
+        {\tt randomSong("abcdefg", 5, 10)} should be {\tt "cfeee"},
+        so long as you call {\tt random.seed(5551212)} before your
+        call to {\tt random\_song}.
+        Back in {\tt main}, include \uline{at least three appropriate} tests of
+        your fruitful function in which you produce random songs.
+%        Just make sure that, before you call your {\tt random\_song} function
+%        in {\tt lab3.py}, you use {\tt random.seed} in the same way you did in
+%        the interpreter.
+
+        \vspace*{6pt}
+        {\bf Note}: Because you are choosing a single character at a time from
+        {\tt notes}, this approach won't work if you're including sharps (which
+        consist of two characters representing the sharped note) --- so don't
+        include any sharps in the string you pass as an argument to {\tt notes}
+        here.
+  \end{enumerate}
+
+  \vspace*{10pt} \hrule \vspace*{1pt} \hrule
+
+  \vspace*{-15pt}
+  \paragraph{Optional Challenge:} If you're looking for an additional challenge,
+    you may choose to implement this function (not required).
+    %%%%%
+    Write a \uline{fruitful} function named {\tt splice\_song} having 
+        five parameters: {\tt song1}, {\tt splice\_where}, {\tt song2},
+        {\tt start2}, and {\tt end2}
+        This function must build from scractch and then return a new string
+        subject to the following.
+        Take the notes from {\tt song2}, starting at the note with index {\it
+        start2} inclusive and ending at the note with index {\tt end2}
+        inclusive, and insert those notes just \uline{before} the note at index
+        {\tt splice\_where} in {\tt song1}.
+        The rest of {\tt song1} must persist.
+        (Again, you are not permitted to use string slicing here.)
+        You may presume that the values given in {\tt splice\_where}, {\tt
+        start2}, and {\tt end2} are valid values in the context.
+
+        As an example, the following test should result in the song string
+        \verb+"cdeEFfgab"+ being stored in the {\tt spliced} variable.
+\begin{Verbatim}[commandchars=\\\{\}]
+    song_one = "cdefgab"
+    \red# indices: 0123456\blk
+    song_two = "CDEFGAB"
+    spliced = splice_song(song_one, 3, song_two, 2, 3)
+    \red# spliced should contain "cdeEFfgab"
+\end{Verbatim}
+
+        Back in {\tt main}, include at least \uline{four} appropriate tests of your
+        function, clearly indicating the produced and expected results.
+
+  \vspace*{10pt} \hrule \vspace*{1pt} \hrule
+
+  \vspace*{-15pt}
+  \paragraph{Submitting:}
+    When finished, simply upload in Google Classroom your {\tt lab3.py}.
+
+\end{document}
+
